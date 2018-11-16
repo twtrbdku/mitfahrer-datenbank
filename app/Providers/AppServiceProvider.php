@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \Validator::extend('email_domain', function($attribute, $value, $parameters, $validator) {
+            $allowedEmailDomains = ['gso-koeln.de'];
+            return in_array( explode('@', $parameters[0])[1] , $allowedEmailDomains);
+        });
     }
 
     /**

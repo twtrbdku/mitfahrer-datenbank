@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHistroyTable extends Migration
+class CreateHistoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateHistroyTable extends Migration
      */
     public function up()
     {
-        Schema::create('histroy', function (Blueprint $table) {
+        Schema::create('history', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->dateTime('journey_date')->nullable();
             $table->integer('passenger_limit')->nullable();
@@ -30,6 +30,6 @@ class CreateHistroyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('histroy');
+        Schema::dropIfExists('history');
     }
 }

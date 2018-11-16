@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\User2Journey;
+use App\User2Rating;
 
 class User extends Authenticatable
 {
@@ -15,7 +17,9 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = ['created_at', 'updated_at', 'deleted_at'];
+    protected $guarded = [
+        'created_at', 'updated_at', 'deleted_at'
+    ];
 
     /**
      * The attributes that are mass assignable.
@@ -23,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'gender',
     ];
 
     /**
@@ -34,4 +38,37 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Return all journeys the user offered
+     */
+    public function offeredJourneys()
+    {
+
+    }
+
+    /**
+     * Return all journeys the user booked
+     */
+    public function bookedJourneys()
+    {
+
+    }
+
+    /**
+     * Return all ratings send by the user
+     */
+    public function ratings()
+    {
+
+    }
+
+    /**
+     * Return all received ratings of the user
+     */
+    public function receivedRatings()
+    {
+
+    }
+
 }

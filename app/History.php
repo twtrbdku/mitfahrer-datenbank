@@ -11,5 +11,7 @@ class History extends Model
      *
      * @var array
      */
-    protected $guarded = ['created_at', 'updated_at', 'deleted_at'];
+    protected $guarded = [
+    	'created_at', 'updated_at', 'deleted_at'
+    ];
 }

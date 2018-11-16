@@ -39,6 +39,7 @@ return [
     'dimensions' => 'Das Attribut :attribute hat ungültige Bildabmessungen.',
     'distinct' => 'Das Feld :attribute hat einen doppelten Wert.',
     'email' => 'Das Attribut :attribute muss eine gültige E-Mail-Adresse sein.',
+    'email_domain' => 'Es sind nur E-Mail-Adressen mit der Endung @gso-koeln.de zulässig.',
     'exists' => 'Das ausgewählte :attribute ist ungültig.',
     'file' => 'Das Attribut :attribute muss eine Datei sein.',
     'filled' => 'Das Feld :attribute muss einen Wert haben.',
