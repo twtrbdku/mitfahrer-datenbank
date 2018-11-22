@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ ($user->name) ? $user->name : old('name') }}" required autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ (old('name')) ? old('name') : $user->name }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Telefonnr.') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" phone="phone" value="{{ ($user->phone) ? $user->phone : old('phone') }}" required autofocus>
+                                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ (old('phone')) ? old('phone') : $user->phone }}" required autofocus>
 
                                 @if ($errors->has('phone'))
                                     <span class="invalid-feedback" role="alert">
@@ -39,18 +39,18 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Telefonnr.') }}</label>
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Geschlecht') }}</label>
 
                             <div class="col-md-6">
-                                <select id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" phone="phone" required autofocus>
+                                <select id="gender" type="text" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" required autofocus>
                                 	@foreach(App\User::GENDER as $key => $val)
                                 		<option value="{{$key}}" {{($key == $user->gender) ? 'selected' : ''}}>{{ __($val) }}</option>
                                 	@endforeach
                                 </select>
 
-                                @if ($errors->has('phone'))
+                                @if ($errors->has('gender'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('phone') }}</strong>
+                                        <strong>{{ $errors->first('gender') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -60,7 +60,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Neues Passwort') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -74,7 +74,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Passwort wiederholen') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" >
                             </div>
                         </div>
 
