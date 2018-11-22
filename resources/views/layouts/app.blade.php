@@ -55,10 +55,30 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                        {{ __('Home') }}
+
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                        {{ __('Mitfahrgelegenheit finden') }}
+
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                        {{ __('Anstehende Mitfahrten') }}
+
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                        {{ __('Fahrt eintragen') }}
+
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('user.edit') }}">
+                                        {{ __('Benutzereinstellungen') }}
+
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Abmelden') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

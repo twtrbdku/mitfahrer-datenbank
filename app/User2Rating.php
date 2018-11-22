@@ -25,9 +25,17 @@ class User2Rating extends Model
     ];
 
     /**
-     * Return the user
+     * Return the sending user
      */
-    public function user()
+    public function sender()
+    {
+
+    }
+
+    /**
+     * Return the receiving user
+     */
+    public function receiver()
     {
 
     }
@@ -36,6 +44,14 @@ class User2Rating extends Model
      * Return the rating
      */
     public function rating()
+    {
+
+    }
+
+    /**
+     * Return the journey
+     */
+    public function journey()
     {
 
     }

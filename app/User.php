@@ -8,9 +8,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\User2Journey;
 use App\User2Rating;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+
+    const GENDER = [
+        0 => 'weiblich',
+        1 => 'männlich',
+    ];
 
     /**
      * The attributes that are not assignable.
@@ -67,6 +72,14 @@ class User extends Authenticatable
      * Return all received ratings of the user
      */
     public function receivedRatings()
+    {
+
+    }
+
+    /**
+     * Return all ratings sent by the user
+     */
+    public function sentRatings()
     {
 
     }
