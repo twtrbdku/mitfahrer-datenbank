@@ -16,6 +16,9 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <!-- JS -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -55,20 +58,24 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                    <a class="dropdown-item" href="{{ route('home') }}">
                                         {{ __('Home') }}
 
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                    <a class="dropdown-item" href="{{ route('journey.search') }}">
                                         {{ __('Mitfahrgelegenheit finden') }}
 
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                    <a class="dropdown-item" href="{{ route('journey.booked') }}">
                                         {{ __('Anstehende Mitfahrten') }}
 
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                    <a class="dropdown-item" href="{{ route('journey.create') }}">
                                         {{ __('Fahrt eintragen') }}
+
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('journey.offered') }}">
+                                        {{ __('Angebotene Fahrten') }}
 
                                     </a>
                                     <a class="dropdown-item" href="{{ route('user.edit') }}">
@@ -91,7 +98,12 @@
                 </div>
             </div>
         </nav>
+        
+        <div id="session_messages" class="container">
 
+            @include('shared.messages')
+
+        </div>
         <main class="py-4">
             @yield('content')
         </main>

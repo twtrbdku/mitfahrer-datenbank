@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\User2Rating;
 
 class Rating extends Model
 {
+    use SoftDeletes;
+    
     /**
      * The attributes that are not assignable.
      *

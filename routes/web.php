@@ -20,13 +20,15 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 Route::group(['prefix' => 'fahrten', 'middleware' => 'verified'], function (){
-	Route::get('/suche', 'JourneyController@index')->name('journey.search');
-	Route::post('/suche', 'JourneyController@index')->name('journey.search');
-	Route::get('/anstehend', 'JourneyController@index')->name('journey.booked');
-	Route::get('/anstehend/{id}', 'JourneyController@index')->name('journey.booked.cancel');
-	Route::get('/anbieten', 'JourneyController@index')->name('journey.create');
-	Route::post('/anbieten', 'JourneyController@index')->name('journey.create');
-	Route::post('/anbieten/{id}', 'JourneyController@index')->name('journey.offered.cancel');
+	Route::get('/suche', 'JourneyController@search')->name('journey.search');
+	Route::post('/suche', 'JourneyController@search')->name('journey.search');
+	Route::get('/buchen/{id}', 'JourneyController@book')->name('journey.book');
+	Route::get('/anstehend', 'JourneyController@booked')->name('journey.booked');
+	Route::get('/anstehend/{id}', 'JourneyController@cancel_booked')->name('journey.booked.cancel');
+	Route::get('/anbieten', 'JourneyController@create')->name('journey.create');
+	Route::post('/anbieten', 'JourneyController@create')->name('journey.create');
+	Route::get('/angeboten', 'JourneyController@offered')->name('journey.offered');
+	Route::get('/angeboten/{id}', 'JourneyController@cancel_offered')->name('journey.offered.cancel');
 });
 
 Route::group(['prefix' => 'benutzer', 'middleware' => 'verified'], function (){

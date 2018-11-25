@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Journey extends Model
 {
+    use SoftDeletes;
+    
     /**
      * The attributes that are not assignable.
      *
@@ -27,7 +30,7 @@ class Journey extends Model
     /**
      * Return the user
      */
-    public function user{
-
+    public function users(){
+        return $this->hasMany('App\User2Journey');
     }
 }

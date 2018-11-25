@@ -31,8 +31,13 @@ class UserController extends Controller
                 'name'      => 'required|string|max:255',
                 'phone'     => 'required|string|max:255',
                 'gender'    => 'required|boolean',
-                #'password'  => 'string|min:6|confirmed',
             ]);
+
+            if(!empty($request->password)){
+                $validatedData = $request->validate([
+                    'password' => 'required|string|min:6|confirmed',
+                ]);
+            }
 
             $user->name = $request->name;
             $user->phone = $request->phone;
